@@ -38,7 +38,7 @@ int main(int argc, char** argv) {
     }
     
     // Stampa delle frequenze
-    for(i=0; i<4; i++) {
+    for(i=0; i<VALORE_MASSIMO+1; i++) {
         printf("Hai inserito il valore %d per %d volte\n", i, frequenze[i]);
     }
     
@@ -51,8 +51,25 @@ int main(int argc, char** argv) {
  * NOTA: considera 0^0=1
  */
 float potenza(int base, int esponente) {
-    // TODO Implementa il corpo della funzione
-    return -1;
+    int i;
+    float risultato;
+    if(esponente==0){
+        risultato=1;
+    }
+    else{
+        
+        if(esponente>0){
+        for(i=0;i<esponente;i++)
+           risultato=base*base;
+        }
+        else{
+           for(i=esponente;i<0;i++){
+               risultato=(float)base/base;
+           
+           }
+        }
+    }
+    return risultato;
 }
 
 /*
@@ -65,6 +82,6 @@ float potenza(int base, int esponente) {
  * dopo la chiamata.
  */
 void aggiornaFrequenza(int frequenze[], int valore) {
-    // TODO Implementa il corpo della funzione
+    frequenze[valore]++;
     return;
 }
